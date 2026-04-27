@@ -27,11 +27,11 @@ conciliacion-bancaria/
 └── 02_Resultado/
 │   └── concilaicon_resultado.xlsx   # Archivo final de la conciliacion(incluye informe final)
 │
-└── conciliacion.py        # Script que contiene todas las funciones usadas en el proyecto
+└── conciliacion.py                  # Script que contiene todas las funciones usadas en el proyecto
 │
-└── main.py                # Notebook principal con todo el flujo
+└── main.py                          # Notebook principal con todo el flujo
 │
-└── README.md                 # Este archivo
+└── README.md                        # Este archivo
 
 ```
 
@@ -45,8 +45,8 @@ conciliacion-bancaria/
 pip install pandas openpyxl rapidfuzz
 ```
 
-| Librería | Uso |
-|----------|-----|
+ Librería 
+
 | `pandas` | Manipulación de datos y merge |
 | `openpyxl` | Exportar y dar formato al Excel de resultados |
 | `rapidfuzz` | Fuzzy matching de referencias (~10x más rápido que fuzzywuzzy) |
