@@ -20,15 +20,24 @@ El resultado final es un archivo Excel con 6 pestañas que resume todo el estado
 ```
 conciliacion-bancaria/
 │
-├── conciliacion.ipynb        # Notebook principal con todo el flujo
-├── README.md                 # Este archivo
+└── 01_Datos_Entrada/
+│   ├── mayor_contable.xlsx          # Mayor contable de la empresa
+│   └── estado_cuenta.xlsx           # Estado de cuenta bancario (2 pestañas: Guayaquil, Pacifico)
+│ 
+└── 02_Resultado/
+│   └── concilaicon_resultado.xlsx   # Archivo final de la conciliacion(incluye informe final)
 │
-└── data/
-    ├── mayor_contable.xlsx   # Mayor contable de la empresa
-    └── estado_cuenta.xlsx    # Estado de cuenta bancario (2 pestañas: Guayaquil, Pacifico)
+└── conciliacion.py        # Script que contiene todas las funciones usadas en el proyecto
+│
+└── main.py                # Notebook principal con todo el flujo
+│
+└── README.md                 # Este archivo
+
 ```
 
 ---
+
+
 
 ## ⚙️ Requisitos
 
