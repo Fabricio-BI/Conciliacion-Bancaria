@@ -189,16 +189,14 @@ Puedes adaptar el código para tu caso de uso:
 
 ---
 
-## 📄 Licencia
 
-MIT License — libre para uso personal y comercial.
 
 ---
 
 ## 👤 Autor
 
-Desarrollado por **[Tu Nombre]**
-📧 contacto@tudominio.com
-🌐 [tu-sitio-web.com](https://tu-sitio-web.com)
+Desarrollado por **Fabricio Coque**
+📧 fabriciocoque@outlook.com
+🌐 [Sitio Web](https://fabriciocoque.github.io/)
 
 > ¿Necesitas este proceso implementado para tu empresa? Contáctame para una consultoría personalizada.
