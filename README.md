@@ -11,7 +11,9 @@ Este proyecto automatiza el proceso de conciliación bancaria, comparando el may
 - **Capa 1 — Merge exacto:** Cruza registros donde la referencia y el importe coinciden perfectamente.
 - **Capa 2 — Fuzzy Matching:** Detecta coincidencias donde las referencias tienen pequeñas diferencias de formato (espacios, guiones, ceros, mayúsculas/minúsculas), pero corresponden al mismo movimiento.
 
-El resultado final es un archivo Excel con 6 pestañas que resume todo el estado de la conciliación.
+El resultado final es un archivo Excel con 6 pestañas que resume todo el estado de la conciliación
+ 
+---
 
 ---
 
@@ -39,7 +41,7 @@ conciliacion-bancaria/
 
 ## 📁 Nota sobre los datos de ejemplo
 Los archivos incluidos en la carpeta data/ contienen información ficticia generada exclusivamente para fines demostrativos. Los nombres, referencias, importes y cuentas no corresponden a ninguna empresa o entidad real.
-Los datos están diseñados para replicar los patrones y problemas típicos de una conciliación bancaria real — referencias con diferencias de formato, importes que no cruzan exactamente, y registros en el banco sin contrapartida contable.
+Los datos están diseñados para replicar los patrones y problemas de una conciliación bancaria real — referencias con diferencias de formato, importes que no cruzan exactamente, y registros en el banco sin contrapartida contable.
 
 ```
 
