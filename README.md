@@ -186,7 +186,8 @@ Todos los registros del mayor contable con las columnas del banco añadidas dond
  
 **¿Para qué sirve?**
 Permite al contador verificar, registro por registro del mayor, si cada movimiento contable tiene su correspondiente acreditación bancaria. El color amarillo indica qué coincidencias fueron aproximadas y merecen una revisión rápida antes de cerrar el mes. Los registros sin color y sin datos del banco son los que quedaron sin match.
- 
+
+ ![Resumen](Docs/Muestra%20mayor.JPG)
 ---
  
 ### 🟩 Pestaña 3 — `Banco vs Mayor`
@@ -196,7 +197,9 @@ Todos los movimientos del estado de cuenta bancario con las columnas del mayor a
  
 **¿Para qué sirve?**
 Es el cruce en dirección contraria: confirma que cada depósito que entró al banco tiene su registro contable correspondiente. Útil para detectar depósitos que el banco registró pero que aún no han sido contabilizados en el mayor — un caso frecuente en cierres de mes.
- 
+
+
+ ![Resumen](Docs/Muestra%20bancos.JPG)
 ---
  
 ### 🟧 Pestaña 4 — `Partidas Pendientes`
@@ -227,18 +230,7 @@ Detalle completo de todas las coincidencias encontradas por el algoritmo de fuzz
 **¿Para qué sirve?**
 Es la hoja de auditoría del proceso. Permite revisar exactamente qué cruzó el algoritmo y con qué nivel de confianza. Un score de 95 es casi certero; un score de 81 merece revisión visual. Esta transparencia es clave para que el contador pueda validar o rechazar cada match fuzzy con criterio, y para documentar el proceso ante una auditoría externa.
 
-## 📈 Ejemplo de resumen de resultados
 
-| Categoría | Registros Mayor | Importe Mayor | Registros Banco | Importe Banco |
-|-----------|:--------------:|:-------------:|:--------------:|:-------------:|
-| Total registros | 500 | $1,250,000 | 480 | $1,248,500 |
-| Coincidencias exactas | 420 | $1,100,000 | 415 | $1,095,000 |
-| Coincidencias fuzzy | 45 | $115,000 | 42 | $112,500 |
-| **Total conciliado** | **465** | **$1,215,000** | **457** | **$1,207,500** |
-| **% Conciliado** | **93%** | **97.2%** | **95.2%** | **96.7%** |
-| Partidas pendientes | 35 | $35,000 | — | — |
-| Depósitos sobrantes | — | — | 23 | $41,000 |
-| Diferencia | 12 | -$6,000 | — | — |
 
 ---
 
