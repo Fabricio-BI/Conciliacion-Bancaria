@@ -1,6 +1,7 @@
 # Conciliación Bancaria Automatizada con Python
 
 Herramienta de conciliación bancaria de alta precisión: Automatización escalable con Python que combina cruce exacto y lógica difusa para optimizar procesos contables con alta transaccionalidad.
+
 ---
 ## Desafío Operativo y Valor de la Solución
 
