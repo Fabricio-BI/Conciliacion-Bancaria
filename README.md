@@ -3,8 +3,16 @@
 > Herramienta de conciliación bancaria en Python que combina **matching exacto** y **fuzzy matching** para identificar y cruzar automáticamente registros entre el mayor contable y el estado de cuenta bancario.
 
 ---
+## Desafío Operativo y Valor de la Solución
 
-## Descripción
+- **El Problema**
+La conciliación bancaria manual es un proceso propenso a errores y costoso en términos de tiempo, especialmente cuando existen inconsistencias en el registro de referencias transaccionales (errores de digitación, omisión de caracteres o formatos variables). En volúmenes de datos masivos, un cruce exacto estándar deja un alto porcentaje de transacciones como "pendientes", obligando al equipo contable a realizar una revisión fila por fila para identificar coincidencias que, aunque evidentes al ojo humano, son invisibles para los sistemas tradicionales.
+
+- **La Solución y su Escalabilidad**
+Este proyecto implementa una arquitectura de limpieza y conciliación automatizada en Python que trasciende el cruce exacto mediante el uso de lógica difusa (Fuzzy Matching). La solución aporta escalabilidad al introducir un "embudo de procesamiento": primero resuelve de forma masiva los cruces directos y, posteriormente, aplica inteligencia algorítmica sobre el residuo de excepciones, validando simultáneamente integridad de montos y similitud de referencias. Este enfoque reduce drásticamente la carga operativa manual, garantiza la trazabilidad del dato y permite procesar miles de registros en segundos, adaptándose fácilmente a diferentes estructuras bancarias o incrementos en el volumen de operaciones sin perder precisión.
+
+---
+## Descripción del proceso 
 
 Este proyecto automatiza el proceso de conciliación bancaria, comparando el mayor contable de la empresa contra el estado de cuenta bancario. Utiliza dos capas de matching para maximizar las coincidencias:
 
@@ -39,7 +47,7 @@ conciliacion-bancaria/
 ---
 
 ## 📁 Nota sobre los datos de ejemplo
-Los archivos incluidos en la carpeta data/ contienen información ficticia generada exclusivamente para fines demostrativos. Los nombres, referencias, importes y cuentas no corresponden a ninguna empresa o entidad real.
+Los archivos incluidos en la carpeta data/ contienen información ficticia generada exclusivamente para desarrolar el codigo y el metodo de resoluciuon de un problema real  Los nombres, referencias, importes y cuentas no corresponden a registros de ningna  entidad real.
 Los datos están diseñados para replicar los patrones y problemas de una conciliación bancaria real — referencias con diferencias de formato, importes que no cruzan exactamente, y registros en el banco sin contrapartida contable.
 
 ```
