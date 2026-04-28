@@ -29,7 +29,7 @@ conciliacion-bancaria/
 │
 └── conciliacion.py                  # Script que contiene todas las funciones usadas en el proyecto
 │
-└── main.py                          # Notebook principal con todo el flujo
+└── main.py                          # Script principal con todo el flujo
 │
 └── README.md                        # Este archivo
 
