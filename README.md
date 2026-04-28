@@ -187,7 +187,7 @@ Todos los registros del mayor contable con las columnas del banco añadidas dond
 **¿Para qué sirve?**
 Permite al contador verificar, registro por registro del mayor, si cada movimiento contable tiene su correspondiente acreditación bancaria. El color amarillo indica qué coincidencias fueron aproximadas y merecen una revisión rápida antes de cerrar el mes. Los registros sin color y sin datos del banco son los que quedaron sin match.
 
- ![Resumen](Docs/Muestra%20mayor.JPG)
+ ![Resumen](Docs/Muestra%20bancos.JPG)
 ---
  
 ### 🟩 Pestaña 3 — `Banco vs Mayor`
@@ -199,7 +199,7 @@ Todos los movimientos del estado de cuenta bancario con las columnas del mayor a
 Es el cruce en dirección contraria: confirma que cada depósito que entró al banco tiene su registro contable correspondiente. Útil para detectar depósitos que el banco registró pero que aún no han sido contabilizados en el mayor — un caso frecuente en cierres de mes.
 
 
- ![Resumen](Docs/Muestra%20bancos.JPG)
+ ![Resumen](Docs/Muestra%20mayor.JPG)
 ---
  
 ### 🟧 Pestaña 4 — `Partidas Pendientes`
@@ -209,7 +209,9 @@ Registros del mayor contable que no encontraron coincidencia en el banco despué
  
 **¿Para qué sirve?**
 Esta hoja es la lista de trabajo del contador. Cada registro aquí representa un movimiento contabilizado que no se refleja en el estado de cuenta — puede ser un cheque no cobrado, una transferencia en tránsito, un error de registro o una partida que requiere investigación. Es el insumo directo para las notas de conciliación.
- 
+
+
+ ![Resumen](Docs/partidas%20pendientes.JPG)
 ---
  
 ### 🟧 Pestaña 5 — `Depósitos Sobrantes`
@@ -219,7 +221,8 @@ Movimientos del estado de cuenta bancario que no encontraron coincidencia en el 
  
 **¿Para qué sirve?**
 Representa dinero que llegó al banco pero que aún no está registrado en la contabilidad. Puede tratarse de depósitos de clientes no identificados, cobros automáticos, intereses bancarios o errores del banco. Esta hoja evita que ingresos reales queden fuera de los libros contables al cierre del período.
- 
+
+  ![Resumen](Docs/Depositos%20sobrantes.JPG)
 ---
  
 ### 🔍 Pestaña 6 — `Fuzzy Matches`
@@ -230,7 +233,7 @@ Detalle completo de todas las coincidencias encontradas por el algoritmo de fuzz
 **¿Para qué sirve?**
 Es la hoja de auditoría del proceso. Permite revisar exactamente qué cruzó el algoritmo y con qué nivel de confianza. Un score de 95 es casi certero; un score de 81 merece revisión visual. Esta transparencia es clave para que el contador pueda validar o rechazar cada match fuzzy con criterio, y para documentar el proceso ante una auditoría externa.
 
-
+ ![Resumen](Docs/fuzzy.JPG)
 
 ---
 
