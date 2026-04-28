@@ -1,6 +1,6 @@
 # Conciliación Bancaria Automatizada con Python
 
-> Herramienta de conciliación bancaria en Python que combina **matching exacto** y **fuzzy matching** para identificar y cruzar automáticamente registros entre el mayor contable y el estado de cuenta bancario.
+ Herramienta de conciliación bancaria en Python que combina **matching exacto** y **fuzzy matching** para identificar y cruzar automáticamente registros entre el mayor contable y el estado de cuenta bancario.
 
 ---
 ## Desafío Operativo y Valor de la Solución
@@ -14,7 +14,7 @@ Este proyecto implementa una arquitectura de limpieza y conciliación automatiza
 ---
 ## Descripción del proceso 
 
-Este proyecto automatiza el proceso de conciliación bancaria, comparando el mayor contable de la empresa contra el estado de cuenta bancario. Utiliza dos capas de matching para maximizar las coincidencias:
+El proceso de conciliación bancaria comparan el mayor contable de la empresa contra el estado de cuenta bancario. Utiliza dos capas de matching para maximizar las coincidencias:
 
 - **Capa 1 — Merge exacto:** Cruza registros donde la referencia y el importe coinciden perfectamente.
 - **Capa 2 — Fuzzy Matching:** Detecta coincidencias donde las referencias tienen pequeñas diferencias de formato (espacios, guiones, ceros, mayúsculas/minúsculas), pero corresponden al mismo movimiento.
@@ -47,8 +47,7 @@ conciliacion-bancaria/
 ---
 
 ## 📁 Nota sobre los datos de ejemplo
-Los archivos incluidos en la carpeta data/ contienen información ficticia generada exclusivamente para desarrolar el codigo y el metodo de resoluciuon de un problema real  Los nombres, referencias, importes y cuentas no corresponden a registros de ningna  entidad real.
-Los datos están diseñados para replicar los patrones y problemas de una conciliación bancaria real — referencias con diferencias de formato, importes que no cruzan exactamente, y registros en el banco sin contrapartida contable.
+Los conjuntos de datos incluidos en este repositorio han sido generados de manera ficticia para simular un escenario operativo real de una empresa con alta transaccionalidad. La información contenida no corresponde a transacciones, entidades o cuentas reales; su uso es estrictamente académico y técnico, con el fin de demostrar la funcionalidad de la solución y la robustez del código desarrollado.
 
 ```
 
