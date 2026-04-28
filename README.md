@@ -37,22 +37,44 @@ conciliacion-bancaria/
 
 ---
 
+## 📁 Nota sobre los datos de ejemplo
+Los archivos incluidos en la carpeta data/ contienen información ficticia generada exclusivamente para fines demostrativos. Los nombres, referencias, importes y cuentas no corresponden a ninguna empresa o entidad real.
+Los datos están diseñados para replicar los patrones y problemas típicos de una conciliación bancaria real — referencias con diferencias de formato, importes que no cruzan exactamente, y registros en el banco sin contrapartida contable.
 
-
-## Requisitos
-
-```bash
-pip install pandas openpyxl rapidfuzz
 ```
 
- Librería 
-| Librería | Objetivo de uso |
-|---------|-----------|
-| `pandas` | Manipulación de datos y merge |
-| `openpyxl` | Exportar y dar formato al Excel de resultados |
-| `rapidfuzz` | Fuzzy matching de referencias (~10x más rápido que fuzzywuzzy) |
+---
+
+## 📁 Estructura de los archivos
+
+### `mayor_contable.xlsx`
+
+| Columna | Descripción |
+|---------|-------------|
+| `Fecha de documento` | Fecha de la transaccion |
+| `Fe.contabilización` | Fecha del registro contable |
+| `Nº documento` | Numero de documento generado en el registro |
+| `Referencia_x` | Tipo de transaccion registrada |
+| `Moneda local` | Moneda del registro |
+| `Importe en moneda local` | Importe del movimiento (puede ser negativo) |
+| `Ref_transaccion` | Referencia del movimiento en el mayor |
+| `Clave_2` | Nombre del punto de venta donde se realizo la transaccion |
+
+### `estado_cuenta.xlsx` (pestañas: Guayaquil / Pacifico)
+
+| Columna | Descripción |
+|---------|-------------|
+| `Banco` | Nombre del banco |
+| `Cuenta bancaria` | Número de cuenta acreditada |
+| `Referencia` | Referencia del movimiento bancario |
+| `Descripción de la operación` | Descripción del movimiento |
+| `Fecha valor` | Fecha de acreditación |
+| `Importe` | Importe del depósito |
+
+```
 
 ---
+
 
 ## Flujo del proceso
 
@@ -100,36 +122,23 @@ ENTRADA
 
 ---
 
-## 📁 Formato de los archivos de entrada
+## Requisitos
 
-### `mayor_contable.xlsx`
+```bash
+pip install pandas openpyxl rapidfuzz
+```
 
-| Columna | Descripción |
-|---------|-------------|
-| `Fecha de documento` | Fecha de la transaccion |
-| `Fe.contabilización` | Fecha del registro contable |
-| `Nº documento` | Numero de documento generado en el registro |
-| `Referencia_x` | Tipo de transaccion registrada |
-| `Moneda local` | Moneda del registro |
-| `Importe en moneda local` | Importe del movimiento (puede ser negativo) |
-| `Ref_transaccion` | Referencia del movimiento en el mayor |
-| `Clave_2` | Nombre del punto de venta donde se realizo la transaccion |
+ Librería 
+| Librería | Objetivo de uso |
+|---------|-----------|
+| `pandas` | Manipulación de datos y merge |
+| `openpyxl` | Exportar y dar formato al Excel de resultados |
+| `rapidfuzz` | Fuzzy matching de referencias (~10x más rápido que fuzzywuzzy) |
 
-### `estado_cuenta.xlsx` (pestañas: Guayaquil / Pacifico)
-
-| Columna | Descripción |
-|---------|-------------|
-| `Banco` | Nombre del banco |
-| `Cuenta bancaria` | Número de cuenta acreditada |
-| `Referencia` | Referencia del movimiento bancario |
-| `Descripción de la operación` | Descripción del movimiento |
-| `Fecha valor` | Fecha de acreditación |
-| `Importe` | Importe del depósito |
-
+---
 
 ##  Lógica de la conciliacion exacta (Capa 1)
 La conciliacion se realiza tomando la referencia tanto del archivo del mayor y del estado de cuenta . Esta referencia corresponde a un numero que se le asigna a cada transaccion que se genera en el punto de venta . El segundo parametro que se usa es el Importe . Para mayor precision se usan ambos parametros 
-
 
 ---
 
