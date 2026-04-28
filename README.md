@@ -175,7 +175,7 @@ Vista ejecutiva con el estado global de la conciliación: total de registros, co
 **¿Para qué sirve?**
 Es la primera hoja que debe ver el CFO o gerente financiero. En 30 segundos permite saber si la conciliación cerró bien, cuánto importe quedó sin cruzar y si hay diferencias que requieren atención. Elimina la necesidad de revisar hoja por hoja para tener una foto del estado general.
 
-![Resumen](docs/img/Informe Final.JPG)
+![Resumen](Docs/Informe Final.JPG)
  
 ---
  
