@@ -1,10 +1,10 @@
-# 🏦 Conciliación Bancaria Automatizada con Python
+# Conciliación Bancaria Automatizada con Python
 
 > Herramienta de conciliación bancaria en Python que combina **matching exacto** y **fuzzy matching** para identificar y cruzar automáticamente registros entre el mayor contable y el estado de cuenta bancario.
 
 ---
 
-## 📋 Descripción
+## Descripción
 
 Este proyecto automatiza el proceso de conciliación bancaria, comparando el mayor contable de la empresa contra el estado de cuenta bancario. Utiliza dos capas de matching para maximizar las coincidencias:
 
@@ -39,25 +39,26 @@ conciliacion-bancaria/
 
 
 
-## ⚙️ Requisitos
+## Requisitos
 
 ```bash
 pip install pandas openpyxl rapidfuzz
 ```
 
  Librería 
-
+| Librería | Objetivo de uso |
+|---------|-----------|
 | `pandas` | Manipulación de datos y merge |
 | `openpyxl` | Exportar y dar formato al Excel de resultados |
 | `rapidfuzz` | Fuzzy matching de referencias (~10x más rápido que fuzzywuzzy) |
 
 ---
 
-## 🔄 Flujo del proceso
+## Flujo del proceso
 
 ```
 ENTRADA
-  mayor_contable.xlsx  +  estado_cuenta.xlsx (Guayaquil + Pacifico)
+  mayor_contable.xlsx  +  estado_cuenta.xlsx (Banco 1  + Banco 2 )
           │
           ▼
   Normalizar importes (.abs())
@@ -86,7 +87,7 @@ ENTRADA
 
 ---
 
-## 📊 Estructura del Excel de salida
+##  Estructura del Excel de salida
 
 | Pestaña | Contenido |
 |---------|-----------|
@@ -105,25 +106,34 @@ ENTRADA
 
 | Columna | Descripción |
 |---------|-------------|
-| `Ref_transaccion` | Referencia del movimiento en el mayor |
+| `Fecha de documento` | Fecha de la transaccion |
+| `Fe.contabilización` | Fecha del registro contable |
+| `Nº documento` | Numero de documento generado en el registro |
+| `Referencia_x` | Tipo de transaccion registrada |
+| `Moneda local` | Moneda del registro |
 | `Importe en moneda local` | Importe del movimiento (puede ser negativo) |
-| `Fecha de documento` | Fecha del registro contable |
-| `Clave_2` | Clave interna del registro |
+| `Ref_transaccion` | Referencia del movimiento en el mayor |
+| `Clave_2` | Nombre del punto de venta donde se realizo la transaccion |
 
 ### `estado_cuenta.xlsx` (pestañas: Guayaquil / Pacifico)
 
 | Columna | Descripción |
 |---------|-------------|
-| `Referencia` | Referencia del movimiento bancario |
-| `Importe` | Importe del depósito |
 | `Banco` | Nombre del banco |
 | `Cuenta bancaria` | Número de cuenta acreditada |
-| `Fecha valor` | Fecha de acreditación |
+| `Referencia` | Referencia del movimiento bancario |
 | `Descripción de la operación` | Descripción del movimiento |
+| `Fecha valor` | Fecha de acreditación |
+| `Importe` | Importe del depósito |
+
+
+##  Lógica de la conciliacion exacta (Capa 1)
+La conciliacion se realiza tomando la referencia tanto del archivo del mayor y del estado de cuenta . Esta referencia corresponde a un numero que se le asigna a cada transaccion que se genera en el punto de venta . El segundo parametro que se usa es el Importe . Para mayor precision se usan ambos parametros 
+
 
 ---
 
-## 🧠 Lógica del Fuzzy Matching
+##  Lógica del Fuzzy Matching (Capa 2)
 
 El fuzzy matching usa `fuzz.partial_ratio` de `rapidfuzz`, que es ideal para referencias bancarias porque:
 
@@ -150,27 +160,6 @@ UMBRAL = 80  # Aumentar para mayor precisión, bajar para mayor cobertura
 
 ---
 
-## 🚀 Cómo usar
-
-1. Clona el repositorio:
-```bash
-git clone https://github.com/tu-usuario/conciliacion-bancaria.git
-```
-
-2. Instala las dependencias:
-```bash
-pip install pandas openpyxl rapidfuzz
-```
-
-3. Coloca tus archivos en la carpeta `data/`:
-   - `mayor_contable.xlsx`
-   - `estado_cuenta.xlsx` (con pestañas Guayaquil y Pacifico)
-
-4. Abre y ejecuta `conciliacion.ipynb` en Google Colab o Jupyter Notebook.
-
-5. El archivo `conciliacion_resultado.xlsx` se guardará automáticamente en tu Google Drive.
-
----
 
 ## 📈 Ejemplo de resumen de resultados
 
