@@ -45,8 +45,6 @@ Los datos están diseñados para replicar los patrones y problemas de una concil
 
 ```
 
----
-
 ## 📁 Estructura de los archivos
 
 ### `mayor_contable.xlsx`
