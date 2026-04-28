@@ -15,7 +15,6 @@ El resultado final es un archivo Excel con 6 pestañas que resume todo el estado
  
 ---
 
----
 
 ## 🗂️ Estructura del proyecto
 
