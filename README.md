@@ -1,4 +1,4 @@
-# Conciliación Bancaria Automatizada con Python
+# Depuración Masiva de Registros Bancarios
 
 Herramienta de conciliación bancaria de alta precisión: Automatización escalable con Python que combina cruce exacto y lógica difusa para optimizar procesos contables con alta transaccionalidad.
 
