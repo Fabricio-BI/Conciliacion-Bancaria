@@ -2,9 +2,8 @@ import pandas as pd
 from rapidfuzz import process, fuzz
 from openpyxl.styles import PatternFill, Font, Alignment
 
-# ──────────────────────────────────────────────────────────────────────────────
 # CARGA DE DATOS
-# ──────────────────────────────────────────────────────────────────────────────
+
 
 def cargar_datos(ruta_mayor, ruta_estado_cuenta):
     """
@@ -31,9 +30,9 @@ def cargar_datos(ruta_mayor, ruta_estado_cuenta):
     return df_mayor, df_bancos
 
 
-# ──────────────────────────────────────────────────────────────────────────────
+
 # CAPA 1 — CRUCE EXACTO
-# ──────────────────────────────────────────────────────────────────────────────
+
 
 def cruce_exacto(df_mayor, df_bancos):
     """
@@ -78,9 +77,9 @@ def cruce_exacto(df_mayor, df_bancos):
     return df_conc_mayor, df_conc_banco
 
 
-# ──────────────────────────────────────────────────────────────────────────────
+
 # OBTENER PENDIENTES
-# ──────────────────────────────────────────────────────────────────────────────
+
 
 def obtener_pendientes(df_conc_mayor, df_conc_banco):
     """
@@ -104,9 +103,9 @@ def obtener_pendientes(df_conc_mayor, df_conc_banco):
     return df_partidas_pendientes, df_depositos_sobrantes
 
 
-# ──────────────────────────────────────────────────────────────────────────────
+
 # CAPA 2 — FUZZY MATCHING
-# ──────────────────────────────────────────────────────────────────────────────
+
 
 def cruce_fuzzy(df_partidas_pendientes, df_depositos_sobrantes, umbral=80):
     """
@@ -156,9 +155,9 @@ def cruce_fuzzy(df_partidas_pendientes, df_depositos_sobrantes, umbral=80):
     return df_fuzzy_matches
 
 
-# ──────────────────────────────────────────────────────────────────────────────
+
 # ACTUALIZAR CONCILIACIÓN CON FUZZY MATCHES
-# ──────────────────────────────────────────────────────────────────────────────
+
 
 def actualizar_conciliacion(df_conc_mayor, df_conc_banco, df_fuzzy_matches):
     """
@@ -200,9 +199,9 @@ def actualizar_conciliacion(df_conc_mayor, df_conc_banco, df_fuzzy_matches):
     return df_conc_mayor, df_conc_banco
 
 
-# ──────────────────────────────────────────────────────────────────────────────
+
 # EXPORTAR A EXCEL
-# ──────────────────────────────────────────────────────────────────────────────
+
 
 def exportar_excel(df_conc_mayor, df_conc_banco, df_partidas_pendientes,
                    df_depositos_sobrantes, df_fuzzy_matches, output_path):
@@ -219,7 +218,7 @@ def exportar_excel(df_conc_mayor, df_conc_banco, df_partidas_pendientes,
         df_fuzzy_matches       : detalle de matches fuzzy
         output_path            : ruta de salida del archivo Excel
     """
-    # ── Construir resumen ────────────────────────────────────────────────────
+    # Construir resumen 
     total_mayor     = len(df_conc_mayor)
     total_banco     = len(df_conc_banco)
     total_imp_mayor = df_conc_mayor['Importe en moneda local'].sum()
@@ -256,7 +255,7 @@ def exportar_excel(df_conc_mayor, df_conc_banco, df_partidas_pendientes,
         {'Categoría': 'Diferencia (Pend - Sobr)',        'Registros Mayor': pend_cnt-sobr_cnt,  'Importe Mayor': round(pend_imp-sobr_imp, 2), 'Registros Banco': '',             'Importe Banco': ''},
     ])
 
-    # ── Escribir Excel ───────────────────────────────────────────────────────
+    # Escribir Excel
     with pd.ExcelWriter(output_path, engine='openpyxl') as writer:
         df_resumen.to_excel(writer,             sheet_name='Resumen',             index=False)
         df_conc_mayor.to_excel(writer,          sheet_name='Mayor vs Banco',      index=False)
